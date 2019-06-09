@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>QPointer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+    <!--<link rel="stylesheet" href="css/theme/simple.css" id="theme">-->
+
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/tomorrow.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+
+
+</head>
+<body>
+<div class="reveal">
+
+    <div class="slides">
+        <section data-markdown="slides/01s.md"> </section>
+        <section data-markdown="slides/02s.md"> </section>
+    </div>
+
+
+    <div class="outter">
+        <div class="inner-left"></div>
+        <div class="inner-right"></div>
+    </div>
+
+
+
+
+    <!--<div class="slides">-->
+        <!--<section>-->
+            <!--<h1><span style="color: #48CF58">Q</span>Pointer</h1>-->
+            <!--<aside class="notes">-->
+                <!--Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).-->
+            <!--</aside>-->
+
+        <!--</section>-->
+
+        <!--&lt;!&ndash;CODE&ndash;&gt;-->
+        <!--<div w3-include-html="presentation/qpointer/01s.md"></div>-->
+
+        <!--<section>-->
+            <!--<h2><span style="color: #48CF58">S</span>ommaire</h2>-->
+
+            <!--<pre><code data-trim data-noescape class="lang-cpp">-->
+                <!--class Employe {-->
+                <!--public:-->
+                    <!--Employe&lt;int&gt;() {}-->
+                    <!--Employe(const Employee &other);-->
+                    <!--Employe &operator=(const Employee &other);-->
+                <!--private:-->
+                    <!--QString myName;-->
+                    <!--QDate myDateOfBirth;-->
+                <!--};-->
+            <!--</code></pre>-->
+
+        <!--</section>-->
+        <!--<section>-->
+
+            <!--<ul>-->
+
+
+                <!--<li class="fragment">QPointer</li>-->
+                <!--<li class="fragment">QPointer</li>-->
+                <!--<li class="fragment">QPointer</li>-->
+                <!--<li class="fragment">QPointer</li>-->
+                <!--<li class="fragment">QPointer</li>-->
+
+            <!--</ul>-->
+
+            <!--<ul>-->
+                <!--<li class="fragment">Pointer</li>-->
+                <!--<li class="fragment">Pointer</li>-->
+                <!--<li class="fragment">Pointer</li>-->
+                <!--<li class="fragment">Pointer</li>-->
+            <!--</ul>-->
+        <!--</section>-->
+        <!--<section>-->
+            <!--<h2>Reference</h2>-->
+            <!--<ul class="fragment">-->
+                <!--<li>value</li>-->
+                <!--<li>reference</li>-->
+            <!--</ul>-->
+            <!--&lt;!&ndash;<img style="float: right" class="fragment" src="https://media.giphy.com/media/l4dC5eCrQdre4XPoLe/giphy.gif">&ndash;&gt;-->
+        <!--</section>-->
+    <!--</div>-->
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+    Reveal.initialize(
+        {
+            // multiplex: {
+            //     // Example values. To generate your own, see the socket.io server instructions.
+            //     secret: '15600317873226017168', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+            //     id: '8bd541543ff28b8f', // Obtained from socket.io server
+            //     url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh' // Location of socket.io server
+            // },
+
+            dependencies: [
+                {src: 'plugin/markdown/marked.js'},
+                {src: 'plugin/markdown/markdown.js'},
+                { src: 'socket.io/socket.io.js', async: true },
+                { src: 'plugin/notes-server/client.js', async: true },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () { hljs.initHighlightingOnLoad(); },
+                },
+                {
+                    src: 'plugin/external/external.js',
+                    condition: function () {
+                        return !!document.querySelector(
+                            '[data-external],[data-external-replace]');
+                    }
+                },
+
+                // { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+                // { src: 'plugin/multiplex/master.js', async: true },
+                // and if you want speaker notes
+                { src: 'plugin/notes-server/client.js', async: true }
+            ]
+        }
+    );
+
+
+    Reveal.configure({ slideNumber: true });
+    Reveal.configure({ slideNumber: '.h/.v' });
+
+    Reveal.configure({ slideNumber: function() {
+            return [ Reveal.getIndices().h, Reveal.getIndices().v];
+    }});
+
+    Reveal.configure({ showSlideNumber: 'all' }); //speaker, all, print
+
+    // Toggle the overview mode programmatically
+
+</script>
+</body>
+</html>
